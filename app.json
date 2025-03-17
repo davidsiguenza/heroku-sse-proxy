@@ -1,0 +1,34 @@
+{
+  "name": "salesforce-sse-proxy",
+  "description": "Proxy para Server-Sent Events de Salesforce",
+  "keywords": ["salesforce", "sse", "proxy", "node", "express"],
+  "repository": "https://github.com/YOUR_USERNAME/YOUR_REPO",
+  "env": {
+    "NPM_CONFIG_PRODUCTION": {
+      "description": "Establecer a false para incluir devDependencies",
+      "value": "false"
+    },
+    "NODE_ENV": {
+      "description": "Entorno de Node.js",
+      "value": "production"
+    },
+    "FORCE_NPM_INSTALL": {
+      "description": "Forzar npm install en lugar de npm ci",
+      "value": "true"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "scripts": {
+    "postdeploy": "echo 'Aplicación desplegada correctamente'"
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "eco"
+    }
+  }
+}
